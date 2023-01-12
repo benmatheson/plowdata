@@ -1,0 +1,21 @@
+on:
+    schedule:
+      - cron:  "1, * * * *"
+    workflow_dispatch:
+  
+  name: plowdata_update
+  
+  jobs:
+    run-update:
+      runs-on: ubuntu-latest
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
+      steps:
+        - uses: actions/checkout@v3
+        - uses: 'node16'
+          with:
+            use-public-rspm: true
+            
+        - name: Execute Script
+          run: |
+            node "plowdata.js"
