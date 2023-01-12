@@ -3,9 +3,9 @@ on:
       - cron:  "1, * * * *"
     workflow_dispatch:
     
-  name: plowdata_update
+name: plowdata_update
   
-  jobs:
+jobs:
     run-update:
       runs-on: ubuntu-latest
       env:
