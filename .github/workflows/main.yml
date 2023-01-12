@@ -12,9 +12,9 @@ jobs:
         TOKEN: ${{ secrets.TOKEN }}
       steps:
         - uses: actions/checkout@v3
-        - uses: 'node16'
+        - uses: actions/setup-node@v3
           with:
-            use-public-rspm: true
+            node-version: 16
             
         - name: Execute Script
           run: |
